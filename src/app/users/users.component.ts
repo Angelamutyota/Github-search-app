@@ -11,11 +11,31 @@ import {Repos} from '../repos'
 export class UsersComponent implements OnInit {
   
 
-  constructor(public myService: UserserviceService, private repoService: UserserviceService) { }
+  constructor(public myService: UserserviceService, private repoService: UserserviceService) { 
+  }
+  user!: Users;
+  repo!: Repos;
 
+  searcher (searchName: string){
+    this.myService.searchUser(searchName).then (
+      (success)=>{
+        this.user = this.myService.findUser;
+      },
+      (error)=>{
+      }
+    );
+    this.repoService.getRepos( searchName).then(
+      (results)=>{
+        this.repo= this.repoService.allRepos
+      },
+      (error)=>{
+      }
+    )
+  }
   
   
-  ngOnInit(): void {
+  ngOnInit() {
+    this.searcher('Angelamutyota');
   }
 
 }

@@ -4,6 +4,7 @@ import {Repos} from './repos';
 import {HttpClient} from '@angular/common/http';
 import { environment} from 'src/environments/environment'
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,5 +30,38 @@ export class UserserviceService {
       following:number;
       created_at:Date;
     }
+
+    return new Promise((resolve, reject)=>{
+      this.http.get<Responce>(environment.apiUrl).toPromise().then(
+        (result)=>{
+          this.findUser = result
+          resolve(resolve)
+        },
+        (error)=>{
+          reject();
+        }
+      );
+    });
+  }
+  getRepos(searchName:string){
+    interface Repos{
+      name: string;
+      login: string;
+      html_url: string;
+      description: string;
+      created_at: Date;
+      language: string;
+    }
+    return new Promise((resolve, reject)=>{
+      this.http.get <Repos>(environment.apiUrl).toPromise().then(
+        (results)=>{
+          this.allRepos = results;
+          resolve(resolve);
+        },
+        (error)=> {
+          reject();;
+        }
+      );
+    });
   }
 }
