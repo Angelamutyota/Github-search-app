@@ -11,15 +11,15 @@ import {Repos} from '../repos'
 export class UsersComponent implements OnInit {
   
 
-  constructor(public myService: UserserviceService, private repoService: UserserviceService) { 
+  constructor(public userService: UserserviceService, private repoService: UserserviceService) { 
   }
   user!: Users;
   repo!: Repos;
 
   searcher (searchName: string){
-    this.myService.searchUser(searchName).then (
+    this.userService.searchUser(searchName).then (
       (success)=>{
-        this.user = this.myService.findUser;
+        this.user = this.userService.findUser;
       },
       (error)=>{
       }

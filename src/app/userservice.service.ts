@@ -20,7 +20,7 @@ export class UserserviceService {
 
   searchUser(SearchName: string){
 
-    interface Responce {
+    interface ApiResponce {
       url: string;
       login: string;
       html_url:string;
@@ -32,7 +32,7 @@ export class UserserviceService {
     }
 
     return new Promise((resolve, reject)=>{
-      this.http.get<Responce>(environment.apiUrl).toPromise().then(
+      this.http.get<ApiResponce>(environment.apiUrl).toPromise().then(
         (result)=>{
           this.findUser = result
           resolve(resolve)
