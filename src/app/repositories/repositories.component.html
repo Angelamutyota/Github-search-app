@@ -1,1 +1,25 @@
-<p>repositories works!</p>
+<div class="container">
+    <div class="overlay">
+        <app-search-form></app-search-form>
+    </div>
+</div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{{user.avatar_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 appHighlight class="card-title">User Name{{user.login}}</h5>
+                  <p> user bio: {{user.bio}}</p>
+                  <p>Date created: {{user.created_at| date}}</p>
+                  <p>no of repos: {{user.public_repos}}</p>
+                </div>
+              </div>
+        </div>
+        <div *ngFor= 'repoDetail of repoDetails'>
+                <h5>name :{{repo.name}}</h5>
+                <p>{{repo.login}}</p>
+                <p></p>
+        </div>
+    </div>
+</div>

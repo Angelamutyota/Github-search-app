@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  UserserviceService } from '../userservice.service'
-import {Users} from '../users'
-import {Repos} from '../repos'
+import { UserserviceService } from '../userservice.service'
+import { Users } from '../users'
+import { Repos } from '../repos'
 
 @Component({
   selector: 'app-users',
@@ -11,31 +11,21 @@ import {Repos} from '../repos'
 export class UsersComponent implements OnInit {
   
 
-  constructor(public userService: UserserviceService, private repoService: UserserviceService) { 
-  }
-  user!: Users;
-  repo!: Repos;
+  user: Users;
+  repo: Repos
+  repoDetails = []
+  userserviceService: UserserviceService;
+  
+  
 
-  searcher (searchName: string){
-    this.userService.searchUser(searchName).then (
-      (success)=>{
-        this.user = this.userService.findUser;
-      },
-      (error)=>{
-      }
-    );
-    this.repoService.getRepos( searchName).then(
-      (results)=>{
-        this.repo= this.repoService.allRepos
-      },
-      (error)=>{
-      }
-    )
-  }
+  constructor(userserviceService: UserserviceService) {
+    this.userserviceService = userserviceService
+   }
   
   
+
   ngOnInit() {
-    this.searcher('Angelamutyota');
+   this.user = this.userserviceService.findUser;
+   this.repoDetails = this.userserviceService.repoData;
   }
-
 }

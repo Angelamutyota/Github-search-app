@@ -11,6 +11,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SearchFormComponent,
     RepositoriesComponent,
     NotfoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
