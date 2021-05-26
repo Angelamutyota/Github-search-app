@@ -12,7 +12,7 @@ import { Repos } from '../repos';
 })
 export class RepositoriesComponent implements OnInit {
   user: Users;
-  repo: Repos
+  repo: Repos 
   repoDetails = []
   userserviceService: UserserviceService;
   
@@ -24,8 +24,9 @@ export class RepositoriesComponent implements OnInit {
   
 
   ngOnInit() {
-   this.user = this.userserviceService.findUser;
-   this.repoDetails = this.userserviceService.repoData;
+    this.user = this.userserviceService.findUser;
+    this.repoDetails = this.userserviceService.repoData;
+ 
     
   }
 

@@ -9,10 +9,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="{{user.avatar_url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 appHighlight class="card-title">User Name{{user.login}}</h5>
+                  <h5 appHighlight class="card-title">User Name:{{user.login}}</h5>
                   <p> user bio: {{user.bio}}</p>
                   <p>Date created: {{user.created_at| date}}</p>
                   <p>no of repos: {{user.public_repos}}</p>
+                  <p>created: {{user.created_at|dateCount}}</p>
                 </div>
               </div>
         </div>

@@ -25,7 +25,9 @@ export class UsersComponent implements OnInit {
   
 
   ngOnInit() {
-   this.user = this.userserviceService.findUser;
-   this.repoDetails = this.userserviceService.repoData;
+  
+     this.user = this.userserviceService.findUser;
+     this.repoDetails = this.userserviceService.repoData;
+ 
   }
 }
