@@ -13,6 +13,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HighlightDirective } from './highlight.directive';
 import { DateCountPipe } from './date-count.pipe';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { DateCountPipe } from './date-count.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
